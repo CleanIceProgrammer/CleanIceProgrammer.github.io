@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>程序设计调查与能力汇总</title>
+        <script>
+            function submit() {
+                let form = document.forms.main;
+                let input = form.elements.name;
+                if (input.value === "") {
+                    alert("Name 不能为空");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="text-align: center">程序设计调查与能力汇总</h1>
+        <form action="https://formspree.io/f/mrgwjezl" method="POST" name="main" onsubmit="submit()">
+            <label>
+                Your Email: 
+                <input type="email" name="email" />
+            </label>
+            <!-- <br /> -->
+            <label>
+                Your Name:
+                <input type="text" name="name" />
+            </label>
+            <!-- <br /> -->
+            <label>
+                <input type="submit" value="提交" name="submit"/>
+            </label>
+        </form>
+    </body>
+</html>
