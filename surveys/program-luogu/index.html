@@ -2,21 +2,228 @@
 <html lang="zh-CN">
     <head>
         <title>LHTS | 程序设计调查——面向洛谷用户</title>
-        <meta charset="utf-8" />
-        <script>
-            function setHeadtitleStyle() {
-                let elements = document.getElementsByClassName("head-title");
-                for (let ele of elements) {
-                    ele.style.textAlign = "center";
-                }
+        <meta charset="utf-8"/>
+        <style>
+            .head-title {
+                text-align: center; 
             }
 
-            function doAll() {
-                setHeadtitleStyle();
+            .tips {
+                background-color: aqua;
+            }
+
+            #submit-div {
+                text-align: center;
+            }
+
+            #submit {
+                text-align: center;
+                background-color: rgb(27, 52, 241);
+                color: white;
+                font-size: 25pt;
+                width: 200px;
+                height: 80px;
+                border-color: grey;
+                border-radius: 10px;
+            }
+        </style>
+        <script>
+            function onSubmit() {
+                let res = confirm("提交？");
+                if (!res) {
+                    return false;
+                }
+                return checkForm();
+            }
+
+            function checkForm() {
+                let names = ["uid", "difficult", "language", "refactoring", "algorithm", "what-to-do"];
+                let types = new Map();
+                types.set("uid", "text");
+                types.set("difficult", "radio");
+                types.set("language", "checkbox");
+                types.set("refactoring", "radio");
+                types.set("algorithm", "radio");
+                types.set("what-to-do", "checkbox");
+                for (let count = 0; count < names.length; count++) {
+                    let name = names[count];
+                    let res = checkElement(name, types.get(name), count + 1);
+                    if (!res) {
+                        checkFailed();
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function checkFailed() {
+                alert("表单提交失败！");
+            }
+
+            function checkElement(name, type, count) {
+                let res = null;
+                switch (type) {
+                    case "text": {
+                        res = checkText(name, count);
+                        break;
+                    }
+                    case "radio": {
+                        res = checkRadio(name, count);
+                        break;
+                    }
+                    case "checkbox": {
+                        res = checkCheckbox(name, count);
+                        break;
+                    }
+                    default: {
+                        throw new Error(`No such type: "${type}"`);
+                    }
+                }
+                if (!res) {
+                    return false;
+                }
+                return true;
+            }
+
+            function checkText(name, count) {
+                let elements = document.getElementsByName(name);
+                for (let ele of elements) {
+                    if (ele.value === "") {
+                        alert(`第 ${count} 问检查失败：不可为空`);
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function checkRadio(name, count) {
+                let elements = document.getElementsByName(name);
+                let found = false;
+                for (let ele of elements) {
+                    if (ele.checked) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    alert(`第 ${count} 问检查失败：必须选择一项`);
+                    return false;
+                }
+                return true;
+            }
+
+            function checkCheckbox(name, count) {
+                let elements = document.getElementsByName(name);
+                let found = false;
+                for (let ele of elements) {
+                    if (ele.checked) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    alert(`第 ${count} 问检查失败：至少选择一项`);
+                    return false;
+                }
+                return true;
             }
         </script>
     </head>
     <body onload="doAll()">
         <h1 class="head-title">程序设计调查——面向洛谷用户</h1>
+        <h2 class="head-title">By <a href="../../index.html">LHTS</a></h2>
+        <div class="tips">
+            <p class="tips">调查结果将于 2023 年 12 月 3 日之前统计完成，会将结果网站发布于洛谷用户 CleanIce（uid：821660）的个人主页。请有兴趣查看结果的自行查看。</p>
+            <p class="tips">为保证数据准确性，一位用户（即使有多个账号）请只提交一次。</p>
+        </div>
+        <form action="https://formspree.io/f/xyyqqyar" method="POST", onsubmit="return onSubmit();">
+            <div>
+                <label>1. 您的洛谷 uid：</label>
+                <input type="text" name="uid"/>
+            </div>
+            <hr/>
+            <div>
+                <label>2. 你认为程序设计相对于信奥的难度是？</label><br/>
+                <input type="radio" name="difficult" value="very-easy"/><label>十分简单</label><br/>
+                <input type="radio" name="difficult" value="easy"/><label>比较简单</label><br/>
+                <input type="radio" name="difficult" value="same"/><label>不相上下</label><br/>
+                <input type="radio" name="difficult" value="difficult"/><label>比较困难</label><br/>
+                <input type="radio" name="difficult" value="very-difficult"/><label>十分困难</label>
+            </div>
+            <hr/>
+            <div>
+                <label>3. 你所掌握的编程语言有？（多选，至少一项）</label><br/>
+                <input type="checkbox" name="language" value="C"/><label>C</label><br/>
+                <input type="checkbox" name="language" value="C++"/><label>C++</label><br/>
+                <input type="checkbox" name="language" value="Java"/><label>Java</label><br/>
+                <input type="checkbox" name="language" value="Python"/><label>Python</label><br/>
+                <input type="checkbox" name="language" value="C#"/><label>C#</label><br/>
+                <input type="checkbox" name="language" value="Go"/><label>Go</label><br/>
+                <input type="checkbox" name="language" value="JavaScript"/><label>JavaScript</label><br/>
+                <input type="checkbox" name="language" value="TypeScript"/><label>TypeScript</label><br/>
+                <input type="checkbox" name="language" value="VisualBasic"/><label>Visual Basic</label><br/>
+                <input type="checkbox" name="language" value="Julia"/><label>Julia</label><br/>
+                <input type="checkbox" name="language" value="VBScript"/><label>VBScript</label><br/>
+                <input type="checkbox" name="language" value="F#"/><label>F#</label><br/>
+                <input type="checkbox" name="language" value="PHP"/><label>PHP</label><br/>
+                <input type="checkbox" name="language" value="Pascal"/><label>Pascal</label><br/>
+                <input type="checkbox" name="language" value="Haskell"/><label>Haskell</label><br/>
+                <input type="checkbox" name="language" value="Swift"/><label>Swift</label><br/>
+                <input type="checkbox" name="language" value="Ruby"/><label>Ruby</label><br/>
+                <input type="checkbox" name="language" value="Perl"/><label>Perl</label><br/>
+                <input type="checkbox" name="language" value="Lua"/><label>Lua</label><br/>
+                <input type="checkbox" name="language" value="Scala"/><label>Scala</label><br/>
+                <input type="checkbox" name="language" value="R"/><label>R</label><br/>
+                <input type="checkbox" name="language" value="Kotlin"/><label>Kotlin</label><br/>
+                <input type="checkbox" name="language" value="Other"/><label>（以及）其他</label>
+            </div>
+            <hr/>
+            <div>
+                <label>4. 你认为重构代码对代码的开发有何意义？</label><br/>
+                <input type="radio" name="refactoring" value="none"/><label>没有任何意义</label><br/>
+                <input type="radio" name="refactoring" value="little"/><label>意义极其微小</label><br/>
+                <input type="radio" name="refactoring" value="less"/><label>只有很小的意义</label><br/>
+                <input type="radio" name="refactoring" value="have"/><label>有一定意义</label><br/>
+                <input type="radio" name="refactoring" value="more"/><label>有很大意义</label><br/>
+                <input type="radio" name="refactoring" value="lot"/><label>意义极其巨大</label><br/>
+                <input type="radio" name="refactoring" value="full"/><label>对我来说这是必须做的事情</label>
+            </div>
+            <hr/>
+            <div>
+                <label>5. 如果让你做程序开发，你会把算法知识用进去吗？</label><br/>
+                <input type="radio" name="algorithm" value="never"/><label>绝对不会</label><br/>
+                <input type="radio" name="algorithm" value="hardly-ever"/><label>几乎不会</label><br/>
+                <input type="radio" name="algorithm" value="sometimes"/><label>偶尔会</label><br/>
+                <input type="radio" name="algorithm" value="usually"/><label>经常会</label><br/>
+                <input type="radio" name="algorithm" value="always"/><label>总是会</label>
+            </div>
+            <hr/>
+            <div>
+                <label>6. 如果让你运用你的编程知识，你最想要的是：（多选，至少一项）</label><br/>
+                <input type="checkbox" name="what-to-do" value="games"/><label>游戏</label><br/>
+                <input type="checkbox" name="what-to-do" value="tools"/><label>实用工具</label><br/>
+                <input type="checkbox" name="what-to-do" value="websites-fore"/><label>网页前端</label><br/>
+                <input type="checkbox" name="what-to-do" value="websites-back"/><label>网页后端</label><br/>
+                <input type="checkbox" name="what-to-do" value="servers"/><label>互联网服务器</label><br/>
+                <input type="checkbox" name="what-to-do" value="datas"/><label>数据分析师</label><br/>
+                <input type="checkbox" name="what-to-do" value="science"/><label>科学领域</label><br/>
+                <input type="checkbox" name="what-to-do" value="math"/><label>数学领域</label><br/>
+                <input type="checkbox" name="what-to-do" value="softwares"/><label>软件设计</label><br/>
+                <input type="checkbox" name="what-to-do" value="systems"/><label>操作系统</label><br/>
+                <input type="checkbox" name="what-to-do" value="algorithms"/><label>算法工程师</label><br/>
+                <input type="checkbox" name="what-to-do" value="languages"/><label>编程语言</label><br/>
+                <input type="checkbox" name="what-to-do" value="bobby"/><label>业余爱好（我还有其他想做的职业）</label><br/>
+                <input type="checkbox" name="what-to-do" value="work"/><label>帮助工作（可以帮助我的工作高效高质量完成）</label><br/>
+                <input type="checkbox" name="what-to-do" value="other"/><label>其他</label>
+            </div>
+            <hr/>
+            <div>
+                <label>7. 你想对广大青少年程序员（包括信奥选手）说些什么？（选做）</label><br/>
+                <input type="text" name="say"/>
+            </div>
+            <div id="submit-div">
+                <input type="submit" id="submit" name="submit"/>
+            </div>
+        </form>
     </body>
 </html>
