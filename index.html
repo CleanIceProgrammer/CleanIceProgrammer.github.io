@@ -5,22 +5,37 @@
         <title>灵和天神 | LHTS</title>
         <link rel="stylesheet" type="text/css" href="./Highlight/styles/androidstudio.css"/>
         <script src="./Highlight/highlight.js"></script>
+        <link rel="stylesheet" type="text/css" href="baststyle.css"/>
+        <script src="./basescript.js"></script>
     </head>
-    <body>
+    <body onload="parseParamsLocation()">
         <script>
             hljs.initHighlightingOnLoad();
         </script>
-        <h1>欢迎来到【灵和天神】</h1>
-        <p>Welcome! </p>
-        <p>this is an code: </p>
-        <pre>
-            <code class="cpp">
-#include &lt;iostream&gt;
-int main() {
-    std::cout &lt;&lt; "Hello World!" &lt;&lt; std::endl;
-    return 0;
-}
-            </code>
-        </pre>
+        <div id="top">
+            <a href="./index.html">主页</a><a href="./tutorial/index.html">教程</a>
+        </div>
+        <div id="left">
+            <h3>公告栏</h3>
+            <p>有意向加入此团队者可以发送邮件至 lhts_teamemail@163.com</p>
+        </div>
+        <div id="main">
+            <h1>欢迎来到【灵和天神】</h1>
+            <h2>【灵和天神】是什么？</h2>
+            <p>【灵和天神】成立于 ---- 年 -- 月 -- 日（目前仍在筹备中），是一个由少年 CleanIce 所创建的一个计算机信息学研究学习与开发团队。</p>
+            <h2>在【灵和天神】，你可以学习交流到什么？</h2>
+            <p>【灵和天神】的主要学习方式是通过于队员进行交流探讨。本团队也会陆续制作一些教程供大家学习。教程面向所有群众，无论你是否是团队的队员。</p>
+            <p>你可以交流学习到：</p>
+            <ol>
+                <li><b>算法与数据结构。</b>在这里，你可以学习一些常用的算法与数据结构，也可以更深层地学习高级算法。oier（信息奥赛选手的通用昵称）们也可以在这里学到一些比赛中会用到的算法。</li>
+                <li><b>计算机基础科学。</b>计算机科学的基础内容，包括如何用二进制表示数据、互联网基础理论、数据传输加密、图像处理、数据压缩、计算机基本结构模型等等</li>
+                <li><b>程序设计。</b>你可以学习到一些编程语言的基本知识，这些语言包括但不限于 Python、Java、C/C++、JavaScript、C# 等等。也可以进一步学习某些技术或者语言的特殊技巧。</li>
+            </ol>
+            <h2>如何加入【灵和天神】？</h2>
+            <p>【灵和天神】欢迎所有人加入。想加入者，可以发送邮件至 lhts_teamemail@163.com。为了方便处理，请将邮件标题设置为《申请加入灵和天神》，并在其中说明加入理由。如果方便说明，可以加上微信号、QQ 号等联系方式（目前不建议泄露电话号码）。</p>
+            <div class="note">
+                <b>说明：</b><span>目前团队仍在筹备，不允许无条件加入。目前团队队员都是团队的筹备建设者。若有想要一起建设者，可以按上述方法申请加入，但要附上可能的贡献（包括但不限于程序设计、网站前后端、组织能力等）。</span>
+            </div>
+        </div>
     </body>
 </html>
