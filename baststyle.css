@@ -4,7 +4,7 @@
         color: balck;
         border-radius: 3px;
         border-color: black;
-        font-family: "Cascadia Mono", "Consolas", "monospace";
+        font-family: "Jetbrains Mono", "Cascadia Mono", "monospace";
     }
 
     div#top {
@@ -48,19 +48,19 @@
             padding-left: 10px;
         }
 
-        >ol {
+        ol {
             padding-left: 30px;
         }
 
-        >div.note {
+        div.note {
             color: lightcyan;
             background-color: rgb(16, 148, 255);
             border-radius: 7px;
             border-color: cyan;
         }
 
-        >div.note:first-child {
-            font-weight: bold;
+        h1 {
+            text-align: center;
         }
     }
 
@@ -80,7 +80,7 @@
         color: balck;
         border-radius: 3px;
         border-color: white;
-        font-family: "Cascadia Mono", "Consolas", "monospace";
+        font-family: "Jetbrains Mono", "Cascadia Mono", "monospace";
     }
     
     div#top {
@@ -98,7 +98,7 @@
             color: white;
         }
 
-        >a {
+        a {
             text-decoration: none;
             color: #377dff;
         }
@@ -118,7 +118,7 @@
             color: white;
         }
 
-        >a {
+        a {
             text-decoration: none;
             color: #377dff;
         }
@@ -136,20 +136,24 @@
             color: white;
         }
 
-        >a {
+        a {
             text-decoration: none;
             color: #377dff;
         }
 
-        >ol {
+        ol {
             padding-left: 30px;
         }
 
-        >div.note {
+        div.note {
             color: lightcyan;
             background-color: rgb(16, 148, 255);
             border-radius: 7px;
             border-color: cyan;
+        }
+
+        h1 {
+            text-align: center;
         }
     }
 }
