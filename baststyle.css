@@ -1,10 +1,10 @@
 @media (prefers-color-scheme: light) {
     span.code {
-        background-color: lightslategray;
-        color: balck;
+        background-color: rgb(224, 224, 224);
+        color: black;
+        border-width: 2;
         border-radius: 3px;
-        border-color: black;
-        font-family: "Jetbrains Mono", "Cascadia Mono", "monospace";
+        font-family: "Jetbrains Mono NL", "Cascadia Code", monospace;
     }
 
     div#top {
@@ -57,10 +57,24 @@
             background-color: rgb(16, 148, 255);
             border-radius: 7px;
             border-color: cyan;
+            border-width: 2px;
+        }
+
+        div.warning {
+            color: lightyellow;
+            background-color: darkorange;
+            border-radius: 7px;
+            border-color: rgb(255, 111, 0);
+            border-width: 2px;
         }
 
         h1 {
             text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: auto;
         }
     }
 
@@ -76,11 +90,11 @@
     }
 
     span.code {
-        background-color: rgb(0, 50, 77);
-        color: balck;
+        background-color: rgb(105, 105, 105);
+        color: white;
+        border-width: 2;
         border-radius: 3px;
-        border-color: white;
-        font-family: "Jetbrains Mono", "Cascadia Mono", "monospace";
+        font-family: "Jetbrains Mono NL", "Cascadia Code", monospace;
     }
     
     div#top {
@@ -150,10 +164,24 @@
             background-color: rgb(16, 148, 255);
             border-radius: 7px;
             border-color: cyan;
+            border-width: 2px;
+        }
+
+        div.warning {
+            color: lightyellow;
+            background-color: darkorange;
+            border-radius: 7px;
+            border-color: rgb(255, 111, 0);
+            border-width: 2px;
         }
 
         h1 {
             text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: auto;
         }
     }
 }
