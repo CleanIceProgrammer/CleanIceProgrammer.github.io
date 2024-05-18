@@ -7,15 +7,15 @@
             .head-title {
                 text-align: center; 
             }
-
+            
             .tips {
                 background-color: aqua;
             }
-
+            
             #submit-div {
                 text-align: center;
             }
-
+            
             #submit {
                 text-align: center;
                 background-color: rgb(27, 52, 241);
@@ -35,7 +35,7 @@
                 }
                 return checkForm();
             }
-
+            
             function checkForm() {
                 let names = ["uid", "difficult", "language", "refactoring", "algorithm", "what-to-do"];
                 let types = new Map();
@@ -55,11 +55,11 @@
                 }
                 return true;
             }
-
+            
             function checkFailed() {
                 alert("表单提交失败！");
             }
-
+            
             function checkElement(name, type, count) {
                 let res = null;
                 switch (type) {
@@ -84,7 +84,7 @@
                 }
                 return true;
             }
-
+            
             function checkText(name, count) {
                 let elements = document.getElementsByName(name);
                 for (let ele of elements) {
@@ -95,7 +95,7 @@
                 }
                 return true;
             }
-
+            
             function checkRadio(name, count) {
                 let elements = document.getElementsByName(name);
                 let found = false;
@@ -111,7 +111,7 @@
                 }
                 return true;
             }
-
+            
             function checkCheckbox(name, count) {
                 let elements = document.getElementsByName(name);
                 let found = false;

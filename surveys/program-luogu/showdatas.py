@@ -17,7 +17,7 @@ def calc_number(number: int, count: int) -> str:
 def show_datas(datas):
     count: int = datas["count"]
     print(f"总人数：{count}")
-
+    
     print("\n难度系数占比：")
     difficult_dict: dict[str, str] = {
         "very-easy": "非常简单", 

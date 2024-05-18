@@ -7,6 +7,7 @@ function scrollInMainDiv(id) {
 }
 
 function parseParamsLocation() {
+    "use strict";
     let params = new URLSearchParams(window.location.search);
     let scroll_value = params.get("location");
     if (scroll_value !== null) {
