@@ -7,6 +7,18 @@
         <script src="../../Highlight/highlight.js"></script>
         <link rel="stylesheet" type="text/css" href="../../baststyle.css"/>
         <script src="../../basescript.js"></script>
+        <style>
+            hr.double-hr {
+                border-top-width: 3px;
+                border-top-style: double;
+            }
+            hr.single-hr {
+                border-top-width: 2px;
+            }
+            div.test-div {
+                justify-content: space-between;
+            }
+        </style>
     </head>
     <body onload="parseParamsLocation()">
         <script>
@@ -20,28 +32,89 @@
             <a href="javascript: void 0" onclick="scrollInMainDiv('title-head')">返回大标题</a><br/><br/>
             <a href="javascript: void 0" onclick="scrollInMainDiv('background-info')">调查背景</a><br/><br/>
             <a href="javascript: void 0" onclick="scrollInMainDiv('base-introduction')">调查介绍</a><br/><br/>
-            <a href="javascript: void 0" onclick="scrollInMainDiv('score-rule')">计分规则</a><br/><br/>
+            <a href="javascript: void 0" onclick="scrollInMainDiv('score-rule')">计分规则</a><br/>
+            <hr/>
+            <a href="javascript: void 0" onclick="scrollInMainDiv('base-info')">基础信息</a><br/><br/>
+            <a href="javascript: void 0" onclick="scrollInMainDiv('test-computer-science')">计算机科学理论知识</a><br/>
         </div>
         <div id="main">
             <h1 id="title-head">计算机学公益普及测试调查</h1>
             
             <h2 id="background-info">调查背景</h2>
-            <p>在这个信息化的时代，发现大多数人不能很好地使用计算机，且对计算机的一般常识一无所知。为了进行公益普及计算机的基础知识，我们需要一些基础数据作为支撑，故此发出此测试调查，请如实填写。</p>
+            <p>在这个信息化的时代，发现大多数人不能很好地使用计算机，且对计算机的一般常识一无所知。为了进行公益宣传计算机的基础知识，我们需要一些基础数据作为支撑，故此发出此测试调查，请如实填写。这将占用您一些时间（因为题目较多），感谢您对此的付出。</p>
             
             <h2 id="base-introduction">调查介绍</h2>
             <p>本调查分为：计算机科学理论知识、计算机使用、编程三个大块。每个大块又分为多个小块。具体如下：</p>
             <ol>
                 <li><strong>计算机科学理论知识</strong>：包括计算机数论、基本算法、基本原理、基本互联网知识等。</li>
                 <li><strong>计算机使用</strong>：包括软硬件、互联网操作、操作系统等。</li>
-                <li><strong>编程</strong>：一些编程基础知识以及各种编程语言。</li>
+                <li><strong>编程</strong>：一些编程基础知识以及各种编程语言。<strong>注意</strong>：本大块的题目比较多，可能占用您较多时间。您可以跳过那些您不会的语言（我们允许空题，但空的题目会单独记录）。我们仍希望您能够抽出时间来看看每道题，谢谢。</li>
             </ol>
-            <p>调查中只包含选择题，包括单选和多选。允许空题。截至时间为 2024 年 6 月 25 日（可能延后）。</p>
+            <p>调查中只包含选择题，包括单选和多选。允许空题。截止时间为 2024 年 6 月 25 日（可能延后）。</p>
             <p>全部完成后，点击提交。若出现问题，请重试，多次失败请发送电子邮件给 CleanIce2022@163.com，邮件标题为《无法提交测试调查》，方便核查。我们将在恢复问题后通过电子邮件回复您。<strong>注意：由于学业负担，若出现问题，只能在周末时间解决，请谅解。若拖延时间过长，我们会适当延后调查截止时间。</strong>服务器只会记录您的第一次提交，因此完成后请慎重提交。</p>
-            <p>最终测试结果将通过电子邮件得形式发送给您。您的个人分数及大块得分、小块得分和每题得分，以及错题得正确答案将在您填写完测试并提交后 5 分钟内发送给您的电子邮件。如果没有收到电子邮件，请发送邮件给 CleanIce2022@163.com，邮件标题为《没有收到测试结果》，方便核查。调查统计得最终结果将于 2024 年 7 月 1 日（可能延后）通过电子邮件发送给您。此外，详细的调查结果将陆续于<a href="https://www.luogu.com.cn">洛谷</a>平台（@<a href="https://www.luogu.com.cn/user/821660">CleanIce</a>）、<a href=https://www.zhihu.com">知乎</a>平台（@<a href="https://www.zhihu.com/people/CleanIceProgrammer">CleanIce</a>）与<a href="https://www.bilibili.com">Bilibili</a>平台（@<a href="https://space.bilibili.com/3546618039110079">CleanIce少年程序员</a>）发布。</p>
+            <p>最终测试结果将通过电子邮件得形式发送给您。您的个人分数及大块得分、小块得分和每题得分，以及错题得正确答案将在您填写完测试并提交后 5 分钟内发送给您的电子邮件。如果没有收到电子邮件，请发送邮件给 CleanIce2022@163.com，邮件标题为《没有收到测试结果》，方便核查。调查统计得最终结果将于 2024 年 7 月 1 日（可能延后）通过电子邮件发送给您。此外，详细的调查结果将陆续于<a href="https://www.luogu.com.cn">洛谷</a>平台（@<a href="https://www.luogu.com.cn/user/821660">CleanIce</a>）、<a href=https://www.zhihu.com">知乎</a>平台（@<a href="https://www.zhihu.com/people/CleanIceProgrammer">CleanIce</a>）与 <a href="https://www.bilibili.com">Bilibili</a> 平台（@<a href="https://space.bilibili.com/3546618039110079">CleanIce少年程序员</a>）发布。</p>
             <p><strong>注意：您必须填写您的邮箱地址（且为有效邮箱地址），否则将无法参与调查。我们保证您的邮箱地址将只用于发送个人测试分数、最终调查结果以及您所遇到的问题的反馈等（即上述的可能情况）。此句可作为法律依据。</strong></p>
+            <p>在此再次感谢您愿意抽出时间参与此次测试调查。</p>
             
             <h2 id="score-rule">计分规则</h2>
             <p>参考<a href="./rules.html">计分规则</a>。</p>
+            
+            <hr class="double-hr"/>
+            
+            <form action="" method="POST">
+                <h2 id="base-info">基础信息</h2>
+                <p><label>您的邮箱（<strong>必填</strong>）：<input type="text" name="email"/></label></p>
+                <p><label>您的昵称（选题，好玩的）：<input type="text" name="name"/></label></p>
+                
+                <hr class="double-hr"/>
+                
+                <h2 id="test-computer-science">计算机科学理论知识</h2>
+                <h3>初级计算机数论</h3>
+                
+                <p>1.（2 分）计算机使用下面哪种形式表示数据？</p>
+                <div class="test-div">
+                    <label><input type="radio" name="test1" value="A"/>A. 十进制</label>
+                    <label><input type="radio" name="test1" value="B"/>B. 二进制</label>
+                    <label><input type="radio" name="test1" value="C"/>C. 十六进制</label>
+                    <label><input type="radio" name="test1" value="D"/>D. 八进制</label>
+                </div>
+                
+                <p>2.（2 分）下面哪个不属于整数的表示法？</p>
+                <div class="test-div">
+                    <label><input type="radio" name="test2" value="A"/>A. 原码表示法</label>
+                    <label><input type="radio" name="test2" value="B"/>B. 补码表示法</label>
+                    <label><input type="radio" name="test2" value="C"/>C. 全码表示法</label>
+                    <label><input type="radio" name="test2" value="D"/>D. 余码表示法</label>
+                </div>
+                
+                <p>3.（2 分）现在最常用的浮点数表示标准为？</p>
+                <div class="test-div">
+                    <label><input type="radio" name="test3" value="A"/>A. IEEE754</label>
+                    <label><input type="radio" name="test3" value="B"/>B. ISO9000</label>
+                    <label><input type="radio" name="test3" value="C"/>C. ISO9001</label>
+                    <label><input type="radio" name="test3" value="D"/>D. IEEE829</label>
+                </div>
+                
+                <p>4.（2 分）现在最通用的编码规范以及编码格式分别为？</p>
+                <div class="test-div">
+                    <label><input type="radio" name="test4" value="A"/>A. Unicode UTF-32</label>
+                    <label><input type="radio" name="test4" value="B"/>B. Unicode UTF-16</label>
+                    <label><input type="radio" name="test4" value="C"/>C. GBK GB18030</label>
+                    <label><input type="radio" name="test4" value="D"/>D. Unicode UTF-8</label>
+                </div>
+                
+                <p>5.（2 分）下面关系正确的是？</p>
+                <div class="test-div">
+                    <label><input type="radio" name="test5" value="A"/>A. 1Kb = 1000bits</label>
+                    <label><input type="radio" name="test5" value="B"/>B. 1KiB = 1000Bytes</label>
+                    <label><input type="radio" name="test5" value="C"/>C. 1KB = 1024bits</label>
+                    <label><input type="radio" name="test5" value="D"/>D. 1KiB = 1024Bytes</label>
+                </div>
+                
+                <hr class="single-hr"/>
+                
+                <h3>初级计算机底层知识</h3>
+            </form>
         </div>
     </body>
 </html>
